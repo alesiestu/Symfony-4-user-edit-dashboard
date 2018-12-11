@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+
+
+
+{% block body %}
+    <main class='main-content bgc-grey-100'>
+        <div id='mainContent'>
+    
+          <div class="masonry-item col-md-12">
+                <div class="bgc-white p-20 bd">
+                  <h6 class="c-grey-900">Modifica</h6>
+                  <div class="mT-30">
+
+                  {{ form_start(form) }}
+                  {{ form_widget(form) }}
+                  {{ form_end(form) }}
+
+     
+                   </div>
+                 <a type="button" class="btn cur-p btn-success" href="{{ path('user') }}">Torna dietro</a>
+                 
+                 </div>
+             
+             
+             </div>
+   
+      
+
+
+
+
+
+
+
+
+         </div>
+     </main>
+
+
+
+{% endblock %}
