@@ -24,7 +24,7 @@ Installation
 2 . Edit file .env with credential of database.
 
 
-3 .a. Execute commands below into your working folder to install the project :
+3 . Execute commands below into your working folder to install the project :
 
 ```bash
 $ composer install
