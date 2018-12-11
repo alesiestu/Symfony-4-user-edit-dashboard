@@ -20,27 +20,28 @@ class UserType extends AbstractType
        
         
         $builder
-            ->add('email', EmailType::class)
+            ->add('username', TextType::class, ['label' => 'Username utente'  ] )
+            ->add('first_name',TextType::class, ['label' => 'Nome'  ] )
+            ->add('last_name',TextType::class,  ['label' => 'Cognome'  ])
+            ->add('email', EmailType::class, ['label' => 'Email utente'  ]   )
             ->add('roles', UserRoleType::class, [
-                'label' => 'label.roles',
+                'label' => 'Ruolo utente',
                 'multiple' => true,
             ])
             ->add('enabled', ChoiceType::class, array(
                 'choices'  => array(
-                    
-                    'Si' => true,
-                    'No' => false,
+                
+                 'Si' => true,
+                 'No' => false,
                 )))
             
-            ->add('username', TextType::class)
-            ->add('first_name',TextType::class)
-            ->add('last_name',TextType::class)
+            
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'second_options' => array('label' => 'Ripeti Password'),
             ))
-            ->add('brochure', FileType::class, array('label' => 'Brochure (PDF file)', ))
+          //  ->add('brochure', FileType::class, array('label' => 'Brochure (PDF file)', ))
         ;
     }
 

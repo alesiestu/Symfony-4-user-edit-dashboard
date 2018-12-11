@@ -29,22 +29,22 @@ class UserEditType extends AbstractType
         $builder
             // string - length 160
             ->add('username', TextType::class, [
-                'label' => 'label.alias',
+                'label' => 'Username',
                 'required' => false,
             ])
             // string - length 50
             ->add('email', TextType::class, [
-                'label' => 'label.title',
+                'label' => 'Email',
                 'required' => false,
             ])
             // string - length 255
             ->add('first_name', TextType::class, [
-                'label' => 'label.avatar',
+                'label' => 'Nome',
                 'required' => false,
             ])
             // string - length 160
             ->add('last_name', TextType::class, [
-                'label' => 'label.email',
+                'label' => 'Cognome',
             ])
             // boolean
           //  ->add('enabled', YesNoType::class, [

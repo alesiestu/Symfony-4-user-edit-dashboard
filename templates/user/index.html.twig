@@ -4,70 +4,156 @@
 
 {% block body %}
 <main class='main-content bgc-grey-100'>
-          <div id='mainContent'>
+        <div id='mainContent'>
+
+
+          <div class="row gap-20 masonry pos-r">
+              <div class="masonry-sizer col-md-6"></div>
+              <div class="masonry-item  w-100">
+                <div class="row gap-20">
+                  <!-- #Toatl Visits ==================== -->
+                  <div class='col-md-3'>
+                    <div class="layers bd bgc-white p-20">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Utenti registrati</h6>
+                      </div>
+                      <div class="layer w-100">
+                        <div class="peers ai-sb fxw-nw">
+                          <div class="peer peer-greed">
+                            <span id="sparklinedash"></span>
+                          </div>
+                          <div class="peer">
+                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">100</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- #Total Page Views ==================== -->
+                  <div class='col-md-3'>
+                    <div class="layers bd bgc-white p-20">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Nuovi utenti</h6>
+                      </div>
+                      <div class="layer w-100">
+                        <div class="peers ai-sb fxw-nw">
+                          <div class="peer peer-greed">
+                            <span id="sparklinedash2"></span>
+                          </div>
+                          <div class="peer">
+                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">13</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- #Unique Visitors ==================== -->
+                  <div class='col-md-3'>
+                    <div class="layers bd bgc-white p-20">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Utenti ancora non abilitati</h6>
+                      </div>
+                      <div class="layer w-100">
+                        <div class="peers ai-sb fxw-nw">
+                          <div class="peer peer-greed">
+                            <span id="sparklinedash3"></span>
+                          </div>
+                          <div class="peer">
+                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">12</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- #Bounce Rate ==================== -->
+                  <div class='col-md-3'>
+                    <div class="layers bd bgc-white p-20">
+                      <div class="layer w-100 mB-10">
+                        <h6 class="lh-1">Utenti rimossi</h6>
+                      </div>
+                      <div class="layer w-100">
+                        <div class="peers ai-sb fxw-nw">
+                          <div class="peer peer-greed">
+                            <span id="sparklinedash4"></span>
+                          </div>
+                          <div class="peer">
+                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">32</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            
+               
+               
+               
+              
+                                      
+                    
+
+
             <div class="container-fluid">
-            <h2 class="c-grey-900 mT-10 mB-30">Pannello freelancer</h2>
+        <h2>   </h2>
              <div class="row">
                 <div class="col-md-12">
                   <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                    <h4 class="c-grey-900 mB-20">Gestione utenti</h4>
-
-                        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <h4 class="c-grey-900 mB-20">Elenco utenti</h4>
+                    <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                          <thead>
                           <tr>
-                           <th scope="col">Username</th>
-                           <th scope="col">Email</th>
-                            <th scope="col">Abilitato</th>
+                            <th scope="col">Username</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Cognome</th>
-                           
+                            <th scope="col">Email utente</th>
+                            <th scope="col">Credenziali abilitate</th>
                             
                             <th scope="col">Azione</th>
-                             </tr>
-                                </thead>
+                            </tr>
+                            </thead>    
                             <tbody>
                              {% for user in users %}
                                 <tr>
+                                   <td>{{ user.firstname }}</td>
+                                   <td>{{ user.lastname }}</td>
                                    <td>{{ user.username }}</td>
                                    <td>{{ user.email }}</td>
                                    <td>{{ user.enabled }}</td>
-                                    <td>{{ user.firstname }}</td>
-                                     <td>{{ user.lastname }}</td>
-                                    
-                                   
                                   
-                             <td>
-                                  <div class="item-actions">
-                                 <div class="peer">
-                                  <a type="button" class="btn cur-p btn-primary" href="user/{{user.id}}/show-user"=>Mostra utente</a>
-                        
-                       
-                                   <a type="button" class="btn cur-p btn-success" href="user/{{user.id}}/edit-user"=>Edit</a>
-                        
-                                  <a type="button" class="btn cur-p btn-danger" href="user/{{user.id}}/delete"=>Cancella</a>
+                                   <td>
+                                    <div class="item-actions">
+                                    <div class="peer">
+                                    <a type="button" class="btn cur-p btn-primary" href="user/{{user.id}}/show-user"=>Mostra utente</a>
+                                    <a type="button" class="btn cur-p btn-success" href="user/{{user.id}}/edit-user"=>Edit</a>
+                                    <a type="button" class="btn cur-p btn-danger" href="user/{{user.id}}/delete"=>Cancella</a>
                                     </div>
-                        
-                        </div>
-                            </td>
-                            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4" align="center">Nessun lavoro trovato, vai a lavorare!</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                                    </div>
+                                    </td>
+                                </tr>
+                             {% else %}
+                             <tr> <td colspan="4" align="center">Tabella utente vuota</td> </tr>
+                             {% endfor %}
+                                </tbody>
+                        </table>
+                         <a type="button" class="btn cur-p btn-success" href="user/new-user"=>Nuovo utente</a>
 
-
-
-          </div>
+                    </div>
+          
+                </div>
           
           </div>
           
           </div>
           
-          </div>
-          <a type="button" class="btn cur-p btn-success" href="user/new-user"=>Aggiungi lavoro</a>
         </main>
 
 

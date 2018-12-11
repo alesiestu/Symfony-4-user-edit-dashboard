@@ -59,20 +59,20 @@ class UserController extends AbstractController
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
 
-            // 3.5) file
-            $file = $user->getBrochure();
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+           // // 3.5) file
+           // $file = $user->getBrochure();
+           // $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
-            try {
-                $file->move(
-                    $this->getParameter('brochures_directory'),
-                    $fileName
-                );
-            } catch (FileException $e) {
+           // try {
+             //   $file->move(
+               //     $this->getParameter('brochures_directory'),
+              //      $fileName
+               // );
+            //} catch (FileException $e) {
                 // ... handle exception if something happens during file upload
-            }
+          //  }
 
-            $user->setBrochure($fileName);
+          //  $user->setBrochure($fileName);
 
             // 4) save the User!
             $entityManager = $this->getDoctrine()->getManager();

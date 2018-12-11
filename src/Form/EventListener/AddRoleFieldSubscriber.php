@@ -22,42 +22,14 @@ class AddRoleFieldSubscriber implements EventSubscriberInterface
     public function setRole(FormEvent $event)
     {
         
-        global $kernel;
-
-        if ( 'AppCache' == get_class($kernel) )
-        {
-            $kernel = $kernel->getKernel();
-        }
-        $doctrine = $kernel->getContainer()->get( 'doctrine' );
-
-        $userRepository=$doctrine->getRepository('App:User');
-        $numberuser = $userRepository-> findAllOrderedByName();
+       
         
-        
-        
-        
-        
-        
-        //controlla tabella vuota
-       // $numberuser = $this->getDoctrine()
-         //   ->getRepository(User::class)
-           // ->countAllUser();
-        
-        if ($numberuser->isEmpty()) {
-            $aRoles = array('ROLE_ADMIN');
-        }  else {
-            $aRoles = array('ROLE_USER');
-        }
-        
-
-
-
-        
-       // $aRoles = array('ROLE_USER');  //SI REGISTRANO I MEMBRI DELLA PIATTAFORMA PER ACCEDERE ALL'AREA MEMBER
 
         /** @var $user \FOS\UserBundle\Model\UserInterface */
+        $aRoles = array('ROLE_USER');  //SI REGISTRANO I MEMBRI DELLA PIATTAFORMA PER ACCEDERE ALL'AREA MEMBER
         $user = $event->getForm()->getData();
         $user->setRoles($aRoles);
+        
     }
 
 

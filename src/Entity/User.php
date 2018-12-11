@@ -9,7 +9,7 @@ namespace App\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity
@@ -34,13 +34,7 @@ class User extends BaseUser
      */
     protected $last_name;
 
-    /**
-     * @ORM\Column(type="string", nullable = true)
-     *
-     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
-     * @Assert\File(mimeTypes={ "application/pdf" })
-     */
-    private $brochure;
+   
 
     public function __construct()
     {
@@ -80,17 +74,7 @@ class User extends BaseUser
 
         return $this;
     }
-    public function getBrochure()
-    {
-        return $this->brochure;
-    }
-
-    public function setBrochure($brochure)
-    {
-        $this->brochure = $brochure;
-
-        return $this;
-    }
+    
     
     
    

@@ -28,6 +28,18 @@ class UserRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+
+    public function findAllCount()
+    {
+      return $this->getEntityManager()
+          ->createQuery('SELECT count (p.id) AS numero FROM AppBundle:User p ')
+          ->setMaxResults(1)
+          ->getResult();
+    }
+
+
+
+
     
 
 
