@@ -33,6 +33,9 @@ $ composer update
 $ bin/console doctrine:schema:update 
 $ bin/console fos:user:create --super-admin
 $ bin/console server:run
+Login demo :
+User: admin
+Password : admin
 ```
 
 Personal routes
